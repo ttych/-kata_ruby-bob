@@ -45,7 +45,6 @@ class BobTest < Minitest::Test
   end
 
   def test_talking_forcefully
-    skip
     remark = "Let's go make out behind the gym!"
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
