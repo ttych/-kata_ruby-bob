@@ -35,7 +35,6 @@ class BobTest < Minitest::Test
   end
 
   def test_asking_a_numeric_question
-    skip
     remark = 'You are, what, like 15?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
