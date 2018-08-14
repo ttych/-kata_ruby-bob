@@ -40,7 +40,6 @@ class BobTest < Minitest::Test
   end
 
   def test_asking_gibberish
-    skip
     remark = ('a'..'z').to_a.sample(10).join << '?'
     assert_equal 'Sure.', bob.hey(remark), feedback(remark)
   end
