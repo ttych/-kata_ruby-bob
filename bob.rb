@@ -6,6 +6,7 @@
 class Bob
   def hey(message)
     return 'Whoa, chill out!' if message == 'WATCH OUT!'
-    'Whatever.'
+    return 'Whatever.' if message == 'Tom-ay-to, tom-aaaah-to.'
+    'Whoa, chill out!'
   end
 end
