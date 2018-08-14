@@ -4,9 +4,11 @@
 #  on empty text, answer 'Fine. Be that way!'
 #  on anything else, answer 'Whatever.'
 class Bob
+  YELL_ANSWER = 'Whoa, chill out!'.freeze
+  DEFAULT_ANSWER = 'Whatever.'.freeze
+
   def hey(message)
-    return 'Whoa, chill out!' if message == 'WATCH OUT!'
-    return 'Whatever.' if message == 'Tom-ay-to, tom-aaaah-to.'
-    'Whoa, chill out!'
+    return YELL_ANSWER if message.upcase == message
+    DEFAULT_ANSWER
   end
 end
