@@ -2,8 +2,8 @@
 
 def minitest_files_for(file_name, base_directory = '')
   case file_name
-  when /.*_test\.rb/, /test_.*\.rb/
-    ["#{base_directory}#{file_name}"]
+  when /.*_test/, /test_.*/
+    ["#{base_directory}#{file_name}.rb"]
   else
     ["#{base_directory}#{file_name}_test.rb",
      "#{base_directory}test_#{file_name}.rb"]
