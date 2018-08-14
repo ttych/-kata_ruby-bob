@@ -60,7 +60,6 @@ class BobTest < Minitest::Test
   end
 
   def test_shouting_numbers
-    skip
     remark = '1, 2, 3 GO!'
     assert_equal 'Whoa, chill out!', bob.hey(remark), feedback(remark)
   end
