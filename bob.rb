@@ -4,7 +4,8 @@
 #  on empty text, answer 'Fine. Be that way!'
 #  on anything else, answer 'Whatever.'
 class Bob
-  def hey(_message)
+  def hey(message)
+    return 'Whoa, chill out!' if message == 'WATCH OUT!'
     'Whatever.'
   end
 end

@@ -3,6 +3,8 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'bob'
 
+# rubocop:disable Metrics/ClassLength
+# test Bob answer's style
 class BobTest < Minitest::Test
   def bob
     ::Bob.new
@@ -18,7 +20,6 @@ class BobTest < Minitest::Test
   end
 
   def test_shouting
-    skip
     remark = 'WATCH OUT!'
     assert_equal 'Whoa, chill out!', bob.hey(remark), feedback(remark)
   end
@@ -133,3 +134,4 @@ no)
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
 end
+# rubocop:enable Metrics/ClassLength
