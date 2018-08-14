@@ -9,8 +9,8 @@ class Bob
   DEFAULT_ANSWER = 'Whatever.'.freeze
 
   def hey(message)
-    return QUESTION_ANSWER if message[-1] == '?'
     return YELL_ANSWER if message.upcase == message
+    return QUESTION_ANSWER if message[-1] == '?'
     DEFAULT_ANSWER
   end
 end
