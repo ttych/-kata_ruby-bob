@@ -109,7 +109,6 @@ class BobTest < Minitest::Test
   end
 
   def test_on_multiple_line_questions
-    skip
     remark = %(
 Does this cryogenic chamber make me look fat?
 no)

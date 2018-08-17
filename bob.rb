@@ -40,6 +40,6 @@ class Message
   end
 
   def empty?
-    message.match(/^\s*$/)
+    message.match(/\A\s*\z/)
   end
 end
