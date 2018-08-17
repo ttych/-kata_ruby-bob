@@ -104,7 +104,6 @@ class BobTest < Minitest::Test
   end
 
   def test_alternate_silences
-    skip
     remark = "\t" * rand(1..10)
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end
