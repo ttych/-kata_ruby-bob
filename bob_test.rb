@@ -94,7 +94,6 @@ class BobTest < Minitest::Test
   end
 
   def test_silence
-    skip
     remark = ''
     assert_equal 'Fine. Be that way!', bob.hey(remark), feedback(remark)
   end

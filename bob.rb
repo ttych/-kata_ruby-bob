@@ -7,9 +7,11 @@ class Bob
   QUESTION_ANSWER = 'Sure.'.freeze
   YELL_ANSWER = 'Whoa, chill out!'.freeze
   DEFAULT_ANSWER = 'Whatever.'.freeze
+  EMPTY_ANSWER = 'Fine. Be that way!'.freeze
 
   def hey(input_message)
     message = Message.new(input_message)
+    return EMPTY_ANSWER if message.empty?
     return YELL_ANSWER if message.yell?
     return QUESTION_ANSWER if message.question?
     DEFAULT_ANSWER
@@ -35,5 +37,9 @@ class Message
 
   def text?
     message.match(/[a-z]/i)
+  end
+
+  def empty?
+    message.match(/^\s*$/)
   end
 end
