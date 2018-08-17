@@ -8,9 +8,32 @@ class Bob
   YELL_ANSWER = 'Whoa, chill out!'.freeze
   DEFAULT_ANSWER = 'Whatever.'.freeze
 
-  def hey(message)
-    return YELL_ANSWER if message.upcase == message && message.match(/[a-z]/i)
-    return QUESTION_ANSWER if message[-1] == '?'
+  def hey(input_message)
+    message = Message.new(input_message)
+    return YELL_ANSWER if message.yell?
+    return QUESTION_ANSWER if message.question?
     DEFAULT_ANSWER
+  end
+end
+
+# Message
+# - encapsulate message behaviour
+class Message
+  attr_reader :message
+
+  def initialize(message)
+    @message = message
+  end
+
+  def yell?
+    text? && message.upcase == message
+  end
+
+  def question?
+    message[-1] == '?'
+  end
+
+  def text?
+    message.match(/[a-z]/i)
   end
 end
