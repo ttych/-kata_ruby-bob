@@ -9,7 +9,7 @@ class Bob
   DEFAULT_ANSWER = 'Whatever.'.freeze
 
   def hey(message)
-    return YELL_ANSWER if message.upcase == message
+    return YELL_ANSWER if message.upcase == message && message.match(/[a-z]/i)
     return QUESTION_ANSWER if message[-1] == '?'
     DEFAULT_ANSWER
   end

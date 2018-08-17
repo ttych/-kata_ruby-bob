@@ -3,7 +3,6 @@ gem 'minitest', '>= 5.0.0'
 require 'minitest/autorun'
 require_relative 'bob'
 
-# rubocop:disable Metrics/ClassLength
 # test Bob answer's style
 class BobTest < Minitest::Test
   def bob
@@ -65,7 +64,6 @@ class BobTest < Minitest::Test
   end
 
   def test_only_numbers
-    skip
     remark = '1, 2, 3'
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
@@ -126,4 +124,3 @@ no)
     assert_equal 'Whatever.', bob.hey(remark), feedback(remark)
   end
 end
-# rubocop:enable Metrics/ClassLength
